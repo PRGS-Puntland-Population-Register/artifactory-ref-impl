@@ -16,3 +16,11 @@ All these artifacts are released as a part of the Mosip Release with some of the
 
 # Update / Deplo
 Apply the changes you want to deploy.
+```shell
+aws ecr get-login-password --region eu-west-1 --profile garowe-prod| docker login --username AWS --password-stdin 767397757018.dkr.ecr.eu-west-1.amazonaws.com
+
+VERSION=1
+docker build -t mosip/artifactory-server:${VERSION} .
+docker tag mosip/artifactory-server:${VERSION} 767397757018.dkr.ecr.eu-west-1.amazonaws.com/mosip/artifactory-server:${VERSION}
+docker push 767397757018.dkr.ecr.eu-west-1.amazonaws.com/mosip/artifactory-server:${VERSION}
+```
