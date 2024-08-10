@@ -189,7 +189,7 @@ COPY ./configure.sh ${work_dir}/
 
 COPY pom.xml ${work_dir}/
 
-RUN cd ${work_dir} && mvn dependency:resolve && mvn clean install
+RUN cd ${work_dir} && mvn dependency:resolve && mvn --no-transfer-progress clean install
 
 RUN bash configure.sh
 
