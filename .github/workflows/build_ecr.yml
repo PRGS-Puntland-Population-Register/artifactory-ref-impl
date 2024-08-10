@@ -7,7 +7,7 @@
 # To get a newer version, you will need to update the SHA.
 # You can also reference a tag or branch, but the action may change without warning.
 
-name: Deploy to Amazon ECS
+name: Deploy to Amazon ECR
 
 on:
   push:
@@ -28,8 +28,6 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: production
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
